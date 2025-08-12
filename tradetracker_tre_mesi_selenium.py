@@ -44,7 +44,7 @@ def run_selenium_script(username: str,
                         folder_id: Optional[str],
                         bucket_name: str) -> Optional[str]:
     """
-    • Login TradeTracker, seleziona intervallo di due mesi fa, esporta CSV.
+    • Login TradeTracker, seleziona intervallo di tre mesi fa, esporta CSV.
     • Rinomina in <mese_anno>.csv e carica nel bucket:
         - se folder_id valido ⇒ <folder_id>/<nome_file>
         - altrimenti        ⇒ <nome_file> (root del bucket)
