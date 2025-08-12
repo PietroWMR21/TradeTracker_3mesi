@@ -1,11 +1,11 @@
 steps:
   # Build the container image con il nuovo nome
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/tradetracker-due_mesi-selenium', '.'] # Solo nome cambiato
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/tradetracker-tre_mesi-selenium', '.'] # Solo nome cambiato
 
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/tradetracker-due_mesi-selenium'] # Solo nome cambiato
+    args: ['push', 'gcr.io/$PROJECT_ID/tradetracker-tre_mesi-selenium'] # Solo nome cambiato
 
   # Deploy container image to Cloud Run con il nuovo nome del servizio
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -13,9 +13,9 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'tradetracker-due_mesi-selenium' # <-- NOME SERVIZIO NUOVO E UNIVOCO
+      - 'tradetracker-tre_mesi-selenium' # <-- NOME SERVIZIO NUOVO E UNIVOCO
       - '--image'
-      - 'gcr.io/$PROJECT_ID/tradetracker-due_mesi-selenium' # <-- Immagine con nome nuovo (senza tag esplicito)
+      - 'gcr.io/$PROJECT_ID/tradetracker-tre_mesi-selenium' # <-- Immagine con nome nuovo (senza tag esplicito)
       - '--platform'
       - 'managed'
       - '--region'
@@ -23,4 +23,4 @@ steps:
       - '--allow-unauthenticated' # <-- Mantenuto come richiesto, ma verifica se è sicuro/necessario!
 
 images:
-  - 'gcr.io/$PROJECT_ID/tradetracker-due_mesi-selenium' # Solo nome cambiato
+  - 'gcr.io/$PROJECT_ID/tradetracker-tre_mesi-selenium' # Solo nome cambiato
