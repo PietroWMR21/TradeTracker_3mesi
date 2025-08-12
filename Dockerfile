@@ -33,4 +33,4 @@ RUN echo "Pacchetti installati dopo requirements.txt:" && pip freeze
 COPY . .
 
 # Avvia l'applicazione utilizzando Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "240", "tradetracker_due_mesi_selenium:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "240", "tradetracker_tre_mesi_selenium:app"]
